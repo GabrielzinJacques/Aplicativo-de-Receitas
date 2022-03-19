@@ -53,7 +53,7 @@ function Login({ history }) {
             />
           </label>
           <button
-            className="bg-emerald-500 rounded-md p-1 w-32 disabled:opacity-80"
+            className="bg-emerald-500 rounded-md p-1 w-32 disabled:opacity-75"
             type="button"
             data-testid="login-submit-btn"
             disabled={ validadeInputs() }

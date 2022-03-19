@@ -112,6 +112,7 @@ function IngredientsCheckbox({
     handleLocalStorage(getLocal, target);
   };
 
+  console.log(ingredientMeasure);
   return (
     <section className="d-flex flex-row">
       <section className="d-flex flex-column">
