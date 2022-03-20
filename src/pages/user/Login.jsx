@@ -15,7 +15,6 @@ function Login({ history }) {
 
   const submitBTM = () => {
     const email = { email: loginEmail };
-
     localStorage.setItem('mealsToken', 1);
     localStorage.setItem('cocktailsToken', 1);
     localStorage.setItem('user', JSON.stringify(email));
@@ -25,10 +24,9 @@ function Login({ history }) {
   return (
     <section className="flex w-screen h-screen justify-center items-center bg-orange-500">
       <section className="flex flex-col">
-
         <h1 className="flex justify-center text-5xl ">Login</h1>
-        <form className="flex flex-col  items-center">
-          <label htmlFor="email">
+        <form className="flex flex-col items-center">
+          <section className="p-2">
             <input
               className="rounded-md p-2"
               type="email"
@@ -39,8 +37,8 @@ function Login({ history }) {
               onChange={ ({ target }) => setLoginEmail(target.value) }
               value={ loginEmail }
             />
-          </label>
-          <label htmlFor="password">
+          </section>
+          <section className="p-2">
             <input
               className="rounded-md p-2"
               type="password"
@@ -51,16 +49,18 @@ function Login({ history }) {
               onChange={ ({ target }) => setLoginPassword(target.value) }
               value={ loginPassword }
             />
-          </label>
-          <button
-            className="bg-emerald-500 rounded-md p-1 w-32 disabled:opacity-75"
-            type="button"
-            data-testid="login-submit-btn"
-            disabled={ validadeInputs() }
-            onClick={ () => submitBTM() }
-          >
-            Entrar
-          </button>
+          </section>
+          <section className="p-2">
+            <button
+              className="bg-emerald-500 rounded-md p-1 w-32 disabled:opacity-80"
+              type="button"
+              data-testid="login-submit-btn"
+              disabled={ validadeInputs() }
+              onClick={ () => submitBTM() }
+            >
+              Entrar
+            </button>
+          </section>
         </form>
       </section>
     </section>

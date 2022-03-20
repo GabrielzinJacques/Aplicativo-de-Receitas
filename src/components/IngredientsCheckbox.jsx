@@ -9,7 +9,6 @@ function IngredientsCheckbox({
   ingredientMeasure,
 }) {
   const [finishedPlate, setFinishedPlate] = useState([]);
-
   const routeFoods = '/foods/:idDaReceita/in-progress';
   const routeDrinks = '/drinks/:idDaReceita/in-progress';
 
@@ -111,27 +110,31 @@ function IngredientsCheckbox({
     }
     handleLocalStorage(getLocal, target);
   };
+  const spaceAndNull = (measure) => measure !== null && measure !== ' ';
 
   console.log(ingredientMeasure);
   return (
     <section className="flex flex-col p-2">
       <p className="text-2xl">Ingredients</p>
       <section className="flex flex-row bg-zinc-300 rounded-md p-2">
-        <section className="flex flex-col">
+        <section className="flex flex-col w-52 ">
           {ingredients.map((ingredient, indexIngredient) => (
             ingredient
           && (
             <section
+              className="flex flex-row itens-center"
               key={ indexIngredient }
             >
               {routeInprogress
          && (
            <label
+             className="py-2 my-1"
              htmlFor={ ingredient }
              data-testid={ `${indexIngredient}-ingredient-step` }
            >
              <input
                type="checkbox"
+               className="h-4 w-4"
                id={ ingredient }
                checked={ finishedPlate[ingredient] }
                name={ ingredient }
@@ -141,32 +144,28 @@ function IngredientsCheckbox({
 
          )}
               <p
-                className="text-xl"
+                className="text-xl py-2 ml-2"
                 style={
                   { textDecoration: finishedPlate[ingredient] && 'line-through' }
                 }
                 data-testid={ `${indexIngredient}-ingredient-name-and-measure` }
               >
-                -
-                {' '}
                 {ingredient}
               </p>
             </section>
           )
           ))}
         </section>
-        <section className="flex flex-col ml-10">
+        <section className="flex flex-col items-center w-44">
           {ingredientMeasure.map((measure, indexMeasure) => (
-            measure
+            spaceAndNull(measure)
           && (
             <p
-              className="text-xl"
+              className="text-xl py-2"
               style={ { listStyle: 'none' } }
               data-testid={ `${indexMeasure}-ingredient-name-and-measure` }
               key={ indexMeasure }
             >
-              -
-              {' '}
               { measure }
             </p>
           )
