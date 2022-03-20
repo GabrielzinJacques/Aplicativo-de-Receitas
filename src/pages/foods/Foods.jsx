@@ -58,6 +58,7 @@ function Food() {
         title="Foods"
         searchIcon
       />
+      <hr className="shadow__header" />
       <section className="flex p-1 my-1">
         <div className="flex flex-wrap justify-between gap-2">
           <ButtonCategory
@@ -90,7 +91,7 @@ function Food() {
             >
               {' '}
               <img
-                className="rounded-md h-40"
+                className="rounded-md h-40 rounded-b-none"
                 data-testid={ `${index}-card-img` }
                 src={ food.strMealThumb }
                 alt={ food.strMeal }

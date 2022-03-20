@@ -64,7 +64,6 @@ function HeaderSearch() {
         type="button"
       >
         Search
-
       </button>
       <label htmlFor="ingredient">
         <input
@@ -99,5 +98,4 @@ function HeaderSearch() {
     </form>
   );
 }
-
 export default HeaderSearch;
