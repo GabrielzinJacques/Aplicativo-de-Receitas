@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do projeto de Receitas!
 
-O app de receitas foi desenvolvido em React, utilizamos Context API e endpoints para popular a aplicação, CSS e Tailwind para estilização. Momento gratificante para o grupo, através das Dms realizadas conseguimos entregar dentro do prazo, colocamos em prática as hard skills e não menos importante as soft skills aprendidas ao longo desses meses. Com certeza uma das melhores experiências que tive voltada para o mercado de trabalho. 
+Esse é o repositório do App de Receitas, um projeto desenvolvido em grupo para finalização do módulo de Front-End enquanto pessoa estudante na Trybe. Nós utilizamos o React, Context API e endpoints para popular a aplicação, CSS e Tailwind para estilização.
 
 # Habilidades
 
