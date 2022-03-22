@@ -9,7 +9,7 @@ function DoneRecipes() {
   useEffect(() => {
     setDoneLocal(JSON.parse(localStorage.getItem('doneRecipes')));
   }, []);
-  const doneRecipes = [
+  const doneRecipes = JSON.parse(localStorage.getItem('doneRecipes')) || [
     {
       id: '52771',
       type: 'food',
@@ -35,13 +35,14 @@ function DoneRecipes() {
   ];
 
   const renderFilter = doneLocal || doneRecipes;
+  console.log(renderFilter);
   return (
     <section className="bg-zinc-200 h-screen">
       <Header title="Done Recipes" />
       <ButtonFilter />
       <section className="p-2">
         {
-          doneRecipes.length > 0 && renderFilter.map((recipe, index) => (
+          renderFilter && renderFilter.map((recipe, index) => (
             <CardRecipe
               array={ doneLocal }
               index={ index }
